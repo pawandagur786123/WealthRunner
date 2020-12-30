@@ -3,7 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import {TextInput, TouchableHighlight, View, Alert, Text,StyleSheet,Image,TouchableOpacity } from 'react-native';
+import {TextInput, TouchableHighlight, View, Text,StyleSheet } from 'react-native';
 
 import {NavigationActions,StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
@@ -52,7 +52,6 @@ class LoginScreen extends Component {
         return (
           <View style={styles.container}>
             <View style={styles.textcont}>
-
               <TextInput
                   style={styles.textinput}
                   autoFocus={false}
@@ -63,7 +62,6 @@ class LoginScreen extends Component {
                   maxLength={20}
                   onChangeText={(userName) => this.setState({userName : userName})}
                 />
-
                 <TextInput 
                     secureTextEntry={true} 
                     placeholder="Password"
@@ -71,13 +69,10 @@ class LoginScreen extends Component {
                     style={styles.textinput} 
                     onChangeText={(psswd) => { this.setState({psswd : psswd})}}
                 />
-
                 <TouchableHighlight underlayColor='#fff' style ={styles.button} onPress={() =>this.onSignupPress()}>
                     <Text style={styles.buttontext}>Login</Text>
                 </TouchableHighlight>
-
             </View>
-            
           </View>
         );
     }

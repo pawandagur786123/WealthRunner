@@ -12,8 +12,8 @@ const initialState = {
     fetch_completed: true,
     error: false,
     login:{
-        id:'prateek',
-        password:'prateek',
+        id:'pawan',
+        password:'pawan786',
     },
     results: {}
 
@@ -109,7 +109,7 @@ export function getAPI(method) {
             method: method
           };
         
-        return(fetch(`http://localhost:3001/students`,requestOptions))
+        return(fetch(`http://localhost:8000/students`,requestOptions))
         .then(res => res.json())
         .then(json => {
 
@@ -120,7 +120,7 @@ export function getAPI(method) {
 }
 
 export function API(method,id) {
-    console.log('dleteApi')
+    console.log('deleteApi')
 
     return (dispatch) => {
         dispatch(startFetching())
@@ -128,7 +128,7 @@ export function API(method,id) {
             method: method
           };
         
-        return(fetch(`http://localhost:3001/students/${id}`,requestOptions))
+        return(fetch(`http://localhost:8000/students/${id}`,requestOptions))
         .then(res => res.json())
         .then(json => {
 

@@ -14,7 +14,7 @@ import {postAPI,API } from '../../reducers/reducer';
 
 
 const Item = Picker.Item;
-// var moment = require('moment');
+var moment = require('moment');
 
 class AddStudentScreen extends Component {
   static navigationOptions={
@@ -65,7 +65,9 @@ class AddStudentScreen extends Component {
         this.props.postAPI(detail)
     }
 
-    nDatePickedFunction = (date) => {
+    onDatePickedFunction(date){
+        console.log("date")
+        console.log(date)
         this.setState({
           dob: moment(date).format('DD-MM-YYYY')
         });
@@ -89,6 +91,8 @@ class AddStudentScreen extends Component {
 
 
     render(){
+        console.log("this.state.dob")
+        console.log(this.state.dob)
         return (
             <View style={styles.container}> 
             <View style={{alignItems:'center',margin:10}}>
@@ -119,7 +123,7 @@ class AddStudentScreen extends Component {
                     <View style={styles.dobbox}>
                         <TouchableOpacity onPress={()=>this.DatePickerMainFunctionCall()}>
                             <Text style={this.state.dob == "Date of Birth" ? {color:'lightgrey',padding:10} : {color:'black',padding:10}}>{this.state.dob}</Text>
-                            <DatePickerDialog ref="DatePickerDialog" onDatePicked={()=>{this.onDatePickedFunction}} />
+                            <DatePickerDialog ref="DatePickerDialog" onDatePicked={(date)=>{this.onDatePickedFunction(date)}} />
                         </TouchableOpacity>
                     </View>
                     <View style={styles.dobbox}>

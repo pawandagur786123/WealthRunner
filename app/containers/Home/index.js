@@ -9,7 +9,7 @@ import {NavigationActions,StackActions } from 'react-navigation';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { getAPI, API } from '../../reducers/reducer';
+import { getAPI, API } from '../../reducer';
 
 
 class HomeScreen extends Component {

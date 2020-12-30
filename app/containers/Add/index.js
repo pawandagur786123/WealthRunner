@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 import { DatePickerDialog } from 'react-native-datepicker-dialog'
 
 import { bindActionCreators } from 'redux';
-import {postAPI,API } from '../../reducers/reducer';
+import {postAPI,API } from '../../reducer';
 
 
 const Item = Picker.Item;

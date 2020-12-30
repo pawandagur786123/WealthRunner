@@ -29,7 +29,7 @@ class LoginScreen extends Component {
 
   onSignupPress(){
       console.log(this.props)
-      login_cred = this.props.DETAIL.login
+      var login_cred = this.props.DETAIL.login
       if(this.state.userName == login_cred.id && this.state.psswd == login_cred.password){
         this._navigateTo('Root')
       }
